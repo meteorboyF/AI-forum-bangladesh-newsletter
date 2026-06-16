@@ -83,6 +83,64 @@
       padding: 0 16px;
     }
 
+    /* Header Nav */
+    .site-header {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 24px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .site-header .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+      padding: 0 16px;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .header-socials {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .social-icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: #f1f5f9;
+      color: var(--dark-navy);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+
+    .social-icon-btn:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-1px);
+    }
+
     /* Top Banner Hero */
     .hero-banner-wrapper {
       margin-bottom: 32px;
@@ -259,7 +317,7 @@
       margin-bottom: 8px;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
     }
 
     .links-group {
@@ -305,6 +363,14 @@
       background-color: var(--primary-color);
       color: white;
       border-color: var(--primary-color);
+    }
+
+    /* Static SVG styling */
+    .svg-icon {
+      display: inline-block;
+      vertical-align: middle;
+      fill: none;
+      stroke: currentColor;
     }
 
     /* Call To Action Section */
@@ -386,12 +452,14 @@
       background-color: #1e293b;
       color: #cbd5e1;
       border: 1px solid #334155;
+      transition: all 0.2s ease;
     }
 
     .footer-social-btn:hover {
       background-color: var(--primary-color);
       color: white;
       border-color: var(--primary-color);
+      transform: translateY(-1px);
     }
 
     /* Responsive Styles */
@@ -419,6 +487,25 @@
 </head>
 <body>
 
+  <!-- Header Section -->
+  <header class="site-header container">
+    <div class="header-container">
+      <a href="#" class="logo-link" aria-label="AI Forum Bangladesh Home">
+        <img src="images/AI_forum.jpg" alt="AI Forum Bangladesh Logo" class="logo-img">
+      </a>
+      <div class="header-socials">
+        <a href="https://www.facebook.com/aiforumbd.official" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="AI Forum Bangladesh on Facebook">
+          <!-- Inline Facebook SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/aiforumbd" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="AI Forum Bangladesh on LinkedIn">
+          <!-- Inline LinkedIn SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
   <main class="container">
     
     <!-- Top Hero Banner -->
@@ -429,7 +516,8 @@
     <!-- Intro Section -->
     <section class="intro-section" aria-label="About AI Forum Bangladesh">
       <h2 class="intro-title">
-        <i data-lucide="info" style="width: 20px; height: 20px; color: var(--primary-color);"></i>
+        <!-- Inline Info SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" style="color: var(--primary-color);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         Empowering Industries with Practical AI
       </h2>
       <p class="intro-text">
@@ -464,31 +552,42 @@
             <div class="links-group">
               <div>
                 <div class="links-title">
-                  <i data-lucide="newspaper" style="width: 12px; height: 12px;"></i> Media Coverage
+                  <!-- Inline Newspaper SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+                  Media Coverage
                 </div>
                 <div class="links-row">
                   <a href="https://www.tbsnews.net/economy/corporates/uiu-ai-forum-train-lankabangla-officials-practical-ai-finance-1254096" target="_blank" rel="noopener noreferrer" class="link-chip">
-                    TBS <i data-lucide="external-link" style="width: 10px; height: 10px;"></i>
+                    TBS 
+                    <!-- Inline External Link SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   </a>
                   <a href="https://www.newagebd.net/post/campus-bites/278289/lankabangla-participates-in-real-life-ai-training-at-uiu" target="_blank" rel="noopener noreferrer" class="link-chip">
-                    New Age <i data-lucide="external-link" style="width: 10px; height: 10px;"></i>
+                    New Age 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   </a>
                   <a href="https://www.daily-sun.com/post/831229" target="_blank" rel="noopener noreferrer" class="link-chip">
-                    Daily Sun <i data-lucide="external-link" style="width: 10px; height: 10px;"></i>
+                    Daily Sun 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   </a>
                   <a href="https://thefinancialexpress.com.bd/trade/lankabangla-securities-participates-in-ai-training-for-capital-market-professionals-at-iriic-uiu" target="_blank" rel="noopener noreferrer" class="link-chip">
-                    Financial Express <i data-lucide="external-link" style="width: 10px; height: 10px;"></i>
+                    Financial Express 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   </a>
                 </div>
               </div>
               
               <div>
                 <div class="links-title">
-                  <i data-lucide="link-2" style="width: 12px; height: 12px;"></i> Official Updates
+                  <!-- Inline Link-2 SVG -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  Official Updates
                 </div>
                 <div class="links-row">
                   <a href="https://www.facebook.com/aiforumbd.official/posts/ai-essentials-for-capital-market-professionals-hands-on-training-in-progress-wit/122139479516890211/" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="facebook" style="width: 12px; height: 12px;"></i> View Facebook Post
+                    <!-- Inline Facebook SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    View Facebook Post
                   </a>
                 </div>
               </div>
@@ -515,14 +614,18 @@
             <div class="links-group">
               <div>
                 <div class="links-title">
-                  <i data-lucide="link-2" style="width: 12px; height: 12px;"></i> Official Updates
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  Official Updates
                 </div>
                 <div class="links-row">
                   <a href="https://www.linkedin.com/posts/mamun79bd_aiforumbangladesh-aiacademy-careercare-activity-7346238183904333824-DHXr" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="linkedin" style="width: 12px; height: 12px;"></i> LinkedIn Reference
+                    <!-- Inline LinkedIn SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn Reference
                   </a>
                   <a href="https://www.linkedin.com/company/aiforumbd" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="linkedin" style="width: 12px; height: 12px;"></i> Company Page
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    Company Page
                   </a>
                 </div>
               </div>
@@ -549,14 +652,17 @@
             <div class="links-group">
               <div>
                 <div class="links-title">
-                  <i data-lucide="link-2" style="width: 12px; height: 12px;"></i> Official Updates
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  Official Updates
                 </div>
                 <div class="links-row">
                   <a href="https://www.facebook.com/aiforumbd.official/posts/day-1-completed-ai-forum-bangladesh-in-collaboration-with-the-pakistan-institute/122141947100890211/" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="facebook" style="width: 12px; height: 12px;"></i> Facebook Day 1
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    Facebook Day 1
                   </a>
                   <a href="https://www.linkedin.com/posts/aiforumbd_aiforumbangladesh-pill-iriic-activity-7388479615406673920-EVTJ" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="linkedin" style="width: 12px; height: 12px;"></i> LinkedIn Post
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn Post
                   </a>
                 </div>
               </div>
@@ -583,14 +689,17 @@
             <div class="links-group">
               <div>
                 <div class="links-title">
-                  <i data-lucide="link-2" style="width: 12px; height: 12px;"></i> Official Updates
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  Official Updates
                 </div>
                 <div class="links-row">
                   <a href="https://www.facebook.com/aiforumbd.official/posts/-upcoming-ai-training-ai-essentials-for-banking-fintech-professionals%EF%B8%8F-24-octobe/122142636008890211/" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="facebook" style="width: 12px; height: 12px;"></i> View Announcement
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    View Announcement
                   </a>
                   <a href="https://www.facebook.com/aiforumbd.official" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="facebook" style="width: 12px; height: 12px;"></i> Facebook Page
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    Facebook Page
                   </a>
                 </div>
               </div>
@@ -617,14 +726,17 @@
             <div class="links-group">
               <div>
                 <div class="links-title">
-                  <i data-lucide="link-2" style="width: 12px; height: 12px;"></i> Official Updates
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  Official Updates
                 </div>
                 <div class="links-row">
                   <a href="https://www.facebook.com/100065157842526/posts/-workshop-recap-ai-essentials-for-healthcare-physiology-professionals-with-bangl/1240462591468991/" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="facebook" style="width: 12px; height: 12px;"></i> View Recap
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    View Recap
                   </a>
                   <a href="https://www.facebook.com/aiforumbd.official" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="facebook" style="width: 12px; height: 12px;"></i> Facebook Page
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    Facebook Page
                   </a>
                 </div>
               </div>
@@ -651,28 +763,34 @@
             <div class="links-group">
               <div>
                 <div class="links-title">
-                  <i data-lucide="newspaper" style="width: 12px; height: 12px;"></i> Media Coverage
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+                  Media Coverage
                 </div>
                 <div class="links-row">
                   <a href="https://www.thedailystar.net/campus/noticeboard/news/uiu-holds-seminar-ai-business-excellence-4101956" target="_blank" rel="noopener noreferrer" class="link-chip">
-                    The Daily Star <i data-lucide="external-link" style="width: 10px; height: 10px;"></i>
+                    The Daily Star 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   </a>
                   <a href="https://www.tbsnews.net/economy/corporates/uiu-holds-seminar-ai-business-excellence-1354646" target="_blank" rel="noopener noreferrer" class="link-chip">
-                    TBS <i data-lucide="external-link" style="width: 10px; height: 10px;"></i>
+                    TBS 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   </a>
                   <a href="https://tbsgraduates.net/campus/uiu-holds-seminar-on-ai-for-business-excellence/" target="_blank" rel="noopener noreferrer" class="link-chip">
-                    TBS Graduates <i data-lucide="external-link" style="width: 10px; height: 10px;"></i>
+                    TBS Graduates 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   </a>
                 </div>
               </div>
               
               <div>
                 <div class="links-title">
-                  <i data-lucide="link-2" style="width: 12px; height: 12px;"></i> Official Updates
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  Official Updates
                 </div>
                 <div class="links-row">
                   <a href="https://www.linkedin.com/company/aiforumbd" target="_blank" rel="noopener noreferrer" class="link-chip social">
-                    <i data-lucide="linkedin" style="width: 12px; height: 12px;"></i> LinkedIn Page
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn Page
                   </a>
                 </div>
               </div>
@@ -691,7 +809,9 @@
           AI Forum Bangladesh designs hands-on AI programs for corporate teams, sector professionals, and institutions.
         </p>
         <a href="https://www.facebook.com/aiforumbd.official" target="_blank" rel="noopener noreferrer" class="cta-btn">
-          Contact AI Forum Bangladesh <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+          Contact AI Forum Bangladesh 
+          <!-- Inline Arrow Right SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" style="margin-left: 4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
     </section>
@@ -699,26 +819,22 @@
 
   <!-- Footer Section -->
   <footer class="container site-footer">
-    <div class="container footer-content">
+    <div class="footer-content">
       <div class="footer-copy">
         &copy; 2026 AI Forum Bangladesh. All rights reserved.
       </div>
       <div class="footer-socials">
         <a href="https://www.facebook.com/aiforumbd.official" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="AI Forum Bangladesh on Facebook">
-          <i data-lucide="facebook" style="width: 16px; height: 16px;"></i>
+          <!-- Inline Facebook SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
         <a href="https://www.linkedin.com/company/aiforumbd" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="AI Forum Bangladesh on LinkedIn">
-          <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i>
+          <!-- Inline LinkedIn SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- Lucide Icon Library -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    // Initialize icons
-    lucide.createIcons();
-  </script>
 </body>
 </html>
