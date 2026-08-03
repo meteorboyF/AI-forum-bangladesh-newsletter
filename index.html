@@ -391,6 +391,101 @@
       stroke: currentColor;
     }
 
+    /* Capability & Sector Sections */
+    .capability-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 56px;
+    }
+
+    .capability-lead {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .step-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      flex: 1 1 calc(50% - 9px);
+      min-width: 210px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: var(--primary-color);
+      font-size: 0.7rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 2px;
+    }
+
+    .step-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .sector-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+
+    .sector-card {
+      flex: 1 1 calc(50% - 6px);
+      min-width: 240px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sector-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-top: 10px;
+    }
+
+    .sector-clients {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.5;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-color);
+    }
+
     /* Call To Action Section */
     .cta-card {
       background: linear-gradient(135deg, var(--dark-navy) 0%, #1e1b4b 100%);
@@ -495,6 +590,12 @@
       .story-title {
         font-size: 1.15rem;
       }
+      .step-item {
+        flex: 1 1 100%;
+      }
+      .sector-card {
+        flex: 1 1 100%;
+      }
       .footer-content {
         flex-direction: column;
         gap: 16px;
@@ -539,6 +640,89 @@
       <p class="intro-text">
         AI Forum Bangladesh has been conducting hands-on AI training programs for finance, healthcare, banking, fintech, energy, development, and research professionals, while receiving recognition from national and international media.
       </p>
+    </section>
+
+    <!-- How We Train -->
+    <section id="training" aria-label="Training delivered by AI Forum Bangladesh">
+      <div class="section-header">
+        <h2 class="section-title">How We Train</h2>
+      </div>
+
+      <div class="capability-card">
+        <p class="capability-lead">
+          AI Forum Bangladesh builds a hands-on curriculum scoped to each organization’s sector, led by Professor Khondaker A. Mamun, and delivers it on site, at the UIU Innovation Hub, or online.
+        </p>
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div>
+              <div class="step-title">Scoping call</div>
+              <div class="step-desc">We learn what your team does, their current AI exposure, and what you want them to be able to do afterwards.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div>
+              <div class="step-title">Tailored proposal</div>
+              <div class="step-desc">A curriculum built for your sector, with duration, delivery mode, and outcomes set out clearly.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div>
+              <div class="step-title">Hands-on delivery</div>
+              <div class="step-desc">Practical sessions with real tools and your own working context, not slideware.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">04</div>
+            <div>
+              <div class="step-title">Certification & follow-up</div>
+              <div class="step-desc">Participants receive certificates, and we stay available for follow-up questions as your team applies what they learned.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sectors We've Worked With -->
+    <section id="sectors" aria-label="Sectors AI Forum Bangladesh has worked with">
+      <div class="section-header">
+        <h2 class="section-title">Sectors We’ve Worked With</h2>
+      </div>
+
+      <div class="sector-grid">
+        <div class="sector-card">
+          <span class="category-tag tag-finance">Capital Markets</span>
+          <div class="sector-desc">AI for financial operations, risk, trade execution, and market research.</div>
+          <div class="sector-clients">LankaBangla Securities PLC &middot; Dhaka Stock Exchange, Investigation &amp; Enforcement Department</div>
+        </div>
+        <div class="sector-card">
+          <span class="category-tag tag-banking">Banking & FinTech</span>
+          <div class="sector-desc">Practical AI for digital finance, financial operations, and technology-enabled banking services.</div>
+          <div class="sector-clients">Sonali Intellect Limited</div>
+        </div>
+        <div class="sector-card">
+          <span class="category-tag tag-healthcare">Healthcare</span>
+          <div class="sector-desc">Hands-on AI for doctors, clinical staff, and physiologists, from hospital workflows to diagnostics.</div>
+          <div class="sector-clients">OGSB Hospital &amp; IRCH &middot; Bangladesh Society of Physiologists &middot; PILL Pakistan</div>
+        </div>
+        <div class="sector-card">
+          <span class="category-tag tag-energy">Energy & Infrastructure</span>
+          <div class="sector-desc">AI tools for productivity and employee performance in the power and energy sector.</div>
+          <div class="sector-clients">Bangladesh Energy and Power Research Council</div>
+        </div>
+        <div class="sector-card">
+          <span class="category-tag tag-research">Education</span>
+          <div class="sector-desc">Programs for university faculty, researchers, and academic teams.</div>
+          <div class="sector-clients">AIMS Lab, UIU</div>
+        </div>
+        <div class="sector-card">
+          <span class="category-tag tag-development">Government & Development</span>
+          <div class="sector-desc">Capacity building for government departments and development organizations.</div>
+          <div class="sector-clients">UNICEF</div>
+        </div>
+      </div>
     </section>
 
     <!-- Main Content / Stories Section -->

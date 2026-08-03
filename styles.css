@@ -299,6 +299,101 @@ a {
   border-color: var(--primary-color);
 }
 
+/* Capability & Sector Sections */
+.capability-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 56px;
+}
+
+.capability-lead {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.step-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 1 calc(50% - 9px);
+  min-width: 210px;
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  color: var(--primary-color);
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 2px;
+}
+
+.step-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.sector-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 56px;
+}
+
+.sector-card {
+  flex: 1 1 calc(50% - 6px);
+  min-width: 240px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sector-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-top: 10px;
+}
+
+.sector-clients {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+}
+
 /* Call To Action Section */
 .cta-card {
   background: linear-gradient(135deg, var(--dark-navy) 0%, #1e1b4b 100%);
@@ -400,6 +495,12 @@ a {
   }
   .story-title {
     font-size: 1.15rem;
+  }
+  .step-item {
+    flex: 1 1 100%;
+  }
+  .sector-card {
+    flex: 1 1 100%;
   }
   .footer-content {
     flex-direction: column;
